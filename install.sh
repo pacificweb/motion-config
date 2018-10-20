@@ -1,6 +1,9 @@
 #!/bin/bash
 
-folder=$HOME/.motion
-mkdir -p $folder
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cp motion.conf $folder
+target=$HOME/.motion
+mkdir -p $target
+
+ln -fs $DIR/motion.conf $target/motion.conf 
+ln -fs $DIR/capture $target/capture
